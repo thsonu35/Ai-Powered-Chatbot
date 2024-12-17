@@ -1,0 +1,295 @@
+/* Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #0b0b0b; /* Pure black background */
+  color: #d32f2f; /* Blood red text color */
+  overflow-x: hidden;
+  background-position: center;
+  background-attachment: fixed; /* Fixes the background in place */
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px; /* Restrict maximum width */
+  margin: 0 auto; /* Center aligns the container */
+  padding: 20px;
+}
+
+/* Header Section */
+.header {
+  text-align: center;
+  background-color: #1a1a1a; /* Dark grey-black */
+  color: #d32f2f; /* Blood red */
+  padding: 40px 20px;
+  border-bottom: 5px solid #8b0000; /* Deep red border */
+  text-shadow: 2px 2px 5px rgba(255, 0, 0, 0.8); /* Eerie glowing red text */
+  margin-bottom: 30px; /* Space below header */
+  position: relative;
+}
+
+.header h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.header p {
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+/* Features Section */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Flexible cards layout */
+  gap: 30px;
+  padding: 40px 0;
+}
+
+.feature-card {
+  background-color: #1a1a1a; /* Dark grey */
+  color: #ff6666; /* Lighter red for contrast */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.6); /* Red glowing effect */
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border: 2px solid #d32f2f; /* Blood red border */
+  margin: 0 auto; /* Ensure consistent centering */
+}
+
+.feature-card h2 {
+  font-size: 1.8rem;
+  color: #ff3333; /* Slightly brighter red for headings */
+  margin-bottom: 15px;
+  border-bottom: 2px solid #8b0000; /* Dark red underline */
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #ffcccc; /* Light pinkish red for text */
+  line-height: 1.6;
+}
+
+.feature-card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 0, 0, 1); /* Intense red glow on hover */
+  background-color: #2a0000; /* Dark blood red on hover */
+}
+
+/* Footer Section */
+.footer {
+  text-align: center;
+  background-color: #1a1a1a;
+  color: #d32f2f;
+  padding: 20px 20px;
+  border-top: 5px solid #8b0000;
+  text-shadow: 1px 1px 5px rgba(255, 0, 0, 0.7); /* Subtle glow */
+  margin-top: 50px; /* Adds space above footer */
+}
+
+.footer p {
+  font-size: 1rem;
+}
+
+/* Horror Effects: Glowing Borders */
+.container::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  box-shadow: inset 0 0 50px rgba(255, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2.5rem;
+  }
+
+  .header p {
+    font-size: 1.2rem;
+  }
+
+  .feature-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .feature-card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .header p {
+    font-size: 1rem;
+  }
+
+  .feature-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .feature-card p {
+    font-size: 0.8rem;
+  }
+}
+/* Eyes Animation */
+.horror-eyes {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+}
+
+.eye {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 0, 0, 1) 0%, rgba(255, 255, 255, 0.6) 60%);
+  box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.7);
+  animation: blink 1.5s infinite ease-in-out, pulse 2s infinite;
+  position: absolute;
+  top: 0%;
+  transform: translateY(-50%);
+}
+
+.left-eye {
+  left: -120px; /* Position it to the left side */
+}
+
+.right-eye {
+  left: 40px; /* Position it to the right side */
+}
+
+/* Pulse Effect for Horror Eyes */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 15px 5px rgba(255, 0, 0, 0.7);
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 25px 10px rgba(255, 0, 0, 1);
+  }
+}
+
+/* Blinking Effect */
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* Common Chatbot Styles */
+.chatbot-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 50px auto;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.chatbot-header h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.chatbot-messages {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.chat-input input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+}
+
+/* Basic Theme - White & Grey */
+.basic-theme {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.basic-theme .chat-input input {
+  background-color: #fff;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+/* Friendly Theme - Green & Yellow */
+.friendly-theme {
+  background-color: #f0f9e8; /* Light Green */
+  color: #2e7d32; /* Dark Green */
+}
+
+.friendly-theme .chat-input input {
+  background-color: #ffffe0; /* Light Yellow */
+  color: #2e7d32;
+  border: 1px solid #c5e1a5; /* Soft Green Border */
+}
+
+/* Aggressive Theme - Red & Black */
+.aggressive-theme {
+  background-color: #222222; /* Dark Background */
+  color: #d32f2f; /* Aggressive Red */
+}
+
+.aggressive-theme .chat-input input {
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid #d32f2f;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.6);
+}
+
+
+/* Error Screen */
+.error-container {
+  background-color: #ffebee;
+  color: #d32f2f;
+  text-align: center;
+  padding: 50px 20px;
+  margin: 50px auto;
+  max-width: 600px;
+  border: 2px solid #d32f2f;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(211, 47, 47, 0.4);
+}
+
+.error-heading {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #b71c1c;
+}
+
+.error-container p {
+  font-size: 1.2rem;
+  color: #d32f2f;
+}

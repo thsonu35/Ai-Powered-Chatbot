@@ -1,12 +1,8 @@
 import React from 'react';
-import Chatbot from './components/Chatbot';
+import Main from './pages/Main';
 
 function App() {
-  return (
-    <div>
-      <Chatbot />
-    </div>
-  );
+  return <Main />;
 }
 
 export default App;
